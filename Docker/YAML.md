@@ -97,7 +97,7 @@ services:
       - "80:80"
     links: 
 ```
-## 앵커와 알리아스 
+## 앵커(Anchor)와 알리아스(Alias) 
 
  ```YAML
  anchors:
