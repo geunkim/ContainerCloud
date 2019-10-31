@@ -1,4 +1,4 @@
-# NGINX (pronouced "endgin-x")
+# NGINX (pronouced "engin-x")
  
  ## **nginx** 도커 이미지로 부터 이미지 만들기   
  
