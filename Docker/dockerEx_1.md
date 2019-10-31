@@ -49,7 +49,7 @@ welcome.html 문서를 폅집하기 위해서 vi 문서 편집기가 필요하�
 ```
 nginx image에 vim이 설치된 현재의 상태를 다음 명령어의 구조를를 이용하여 이미지를 만든다.
 ```sh
-~$ docker commit -a"nginx+vim" 41e86466dbd1 myNginx/0.1
+~$ docker commit -a"nginx+vim" 41e86466dbd1 mynginx:1.0
 ```
 
 
