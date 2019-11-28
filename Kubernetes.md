@@ -25,7 +25,7 @@ Minikube는 기본적으로 호스트 상의 가상머신(VM: Virtual Machine)�
 이는 주로 교육/훈력을 목적으로 k8을 쉽게 사용할 수 있는 단일 노드 클러스터로서 개발 환경이다. 
 
 ![Kubernetes features](https://qph.fs.quoracdn.net/main-qimg-6090cfa54f58441223588c9e0bb5a33b-c)
-(source:https://www.quora.com/What-are-some-benefits-in-using-Kubernetes)
+(출처: https://www.quora.com/What-are-some-benefits-in-using-Kubernetes)
 
 ## 클러스터
 
@@ -36,7 +36,38 @@ Minikube는 기본적으로 호스트 상의 가상머신(VM: Virtual Machine)�
 배치할 수 있는 컨테이너 수가 결정된다. 클러스터 처리 능력은 노드에 의해 결정한다. 
 ```kubectl get nodes``` 명령으로 현재 클러스터에 포함된 노드의 목록을 확인할 수 있다.
 
+![쿠버네티스 클러스터](https://d33wubrfki0l68.cloudfront.net/99d9808dcbf2880a996ed50d308a186b5900cec9/40b94/docs/tutorials/kubernetes-basics/public/images/module_01_cluster.svg)
+(출처: https://kubernetes.io/)
 
+### 마스터 노드 
+
+쿠버네티스 마스터 노드에 배포되는 컴포넌트는 다음과 같다. 
+
+* ```kube-apiserver```
+* ```etcl```
+* ```kube-scheduler```
+* ```kube-controller-manager```
+* ```proxy```
+* ```controller```
+* ```dns```
+
+### 네임스페이스
+
+쿠버네티스는 클러스터안에 가장 클러스터를 또 다시 만들 수 있다. 클러스터 안의 가상 클러스터를 네임스페이스(namespace)라고
+한다. 처음 구축했을 때는 ```default```, ```kube-node-lease```, ```kube-public```, ```kube-system```의
+4 개의 
+
+```shell
+$ kubectl get namespace
+NAME              STATUS   AGE
+default           Active   2m23s
+kube-node-lease   Active   2m26s
+kube-public       Active   2m26s
+kube-system       Active   2m26s
+```
+
+
+### 노드
 
 ## 디플로이먼트 (deployment)
 
