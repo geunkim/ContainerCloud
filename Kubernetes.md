@@ -27,6 +27,17 @@ Minikube는 기본적으로 호스트 상의 가상머신(VM: Virtual Machine)�
 ![Kubernetes features](https://qph.fs.quoracdn.net/main-qimg-6090cfa54f58441223588c9e0bb5a33b-c)
 (source:https://www.quora.com/What-are-some-benefits-in-using-Kubernetes)
 
+## 클러스터
+
+쿠버네티스 클러스터는 쿠버 네티스의 여러 자원을 관리하기 위한 집합체이다. 쿠버네티스 자원 중 가장 넓은 개념이 **노드(node)** 이다. 
+노드는 쿠버네티스 클라스터 관리 대상으로 등록된 도커 호스트로 컨터에너가 배치되는 대상이다. 쿠버네티스 클러스터 전체를 관리하는 노드인
+**마스터 노드(master node)** 가 하나 이상 있어야 한다. 
+쿠버네티스는 노드의 자원 사용 현황 및 배치 전략을 바탕으로 컨테이널르 적절히 배치한다. 즉 클러스터에 배치된 노드의 수, 노드의 사양 등에 따라 
+배치할 수 있는 컨테이너 수가 결정된다. 클러스터 처리 능력은 노드에 의해 결정한다. 
+```kubectl get nodes``` 명령으로 현재 클러스터에 포함된 노드의 목록을 확인할 수 있다.
+
+
+
 ## 디플로이먼트 (deployment)
 
 ## 리플리케이션컨트롤러 
