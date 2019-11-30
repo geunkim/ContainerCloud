@@ -25,6 +25,7 @@ Minikube는 기본적으로 호스트 상의 가상머신(VM: Virtual Machine)�
 이는 주로 교육/훈력을 목적으로 k8을 쉽게 사용할 수 있는 단일 노드 클러스터로서 개발 환경이다. 
 
 ![Kubernetes features](https://qph.fs.quoracdn.net/main-qimg-6090cfa54f58441223588c9e0bb5a33b-c)
+
 (출처: https://www.quora.com/What-are-some-benefits-in-using-Kubernetes)
 
 ## 클러스터
@@ -37,6 +38,7 @@ Minikube는 기본적으로 호스트 상의 가상머신(VM: Virtual Machine)�
 ```kubectl get nodes``` 명령으로 현재 클러스터에 포함된 노드의 목록을 확인할 수 있다.
 
 ![쿠버네티스 클러스터](https://d33wubrfki0l68.cloudfront.net/99d9808dcbf2880a996ed50d308a186b5900cec9/40b94/docs/tutorials/kubernetes-basics/public/images/module_01_cluster.svg)
+
 (출처: https://kubernetes.io/)
 
 ### 마스터 노드 
@@ -53,9 +55,9 @@ Minikube는 기본적으로 호스트 상의 가상머신(VM: Virtual Machine)�
 
 ### 네임스페이스
 
-쿠버네티스는 클러스터안에 가장 클러스터를 또 다시 만들 수 있다. 클러스터 안의 가상 클러스터를 네임스페이스(namespace)라고
+쿠버네티스는 동일한 물리 클러스터안에 복수의 가상 클러스터를 또 다시 만들 수 있다. 클러스터 안의 가상 클러스터를 네임스페이스(namespace)라고
 한다. 처음 구축했을 때는 ```default```, ```kube-node-lease```, ```kube-public```, ```kube-system```의
-4 개의 
+4 개의 네임스페이스가 존재한다. 
 
 ```shell
 $ kubectl get namespace
@@ -65,6 +67,14 @@ kube-node-lease   Active   2m26s
 kube-public       Active   2m26s
 kube-system       Active   2m26s
 ```
+#### 복수의 네임스페이스가 필요한 경우 
+
+네임스페이스는 복수의 팀이나 프로젝트에 결쳐 많은 사용자가 있는 환경에서 사용하도록 만들어졌다. 사용자가 거의 없거나 수십명 정도인 경우는 네임스페이스를 고려할 필요가 없다. 자원들은 네임스페이스 내에서 자원의 이름은 유일하고 구분될 필요가 있다.
+네임스페이스는 클러스터의 자원을 ```resource quota```를 통해 여러 사용자 간에  나누는 방법이다. 
+네임스페이스는 서로 중첩되지 않으며 각 쿠버네티스 자원안 하나의 네임스페이스에서면 존재한다. 
+같은 소프트웨어 인데 버전이 다른 것 같은 약간의 차이가 있는 자원을 분리하기 위해서 복수의 네임스페이스를 사용하여이 한다. 
+동일한 네임스페이스에 있는 자원을 구분하기 위해서 레이블(label)을 사용한다. 
+
 
 
 ### 노드
