@@ -97,7 +97,8 @@ key: value # ok
 
 ## yamllint
 
-YAML 뭄법을 체크하고 어뗗게 해석하는지 결과를 보여준다.
+YAML 문법을 체크하고 어뗗게 해석하는지 결과를 보여준다.
+
 [https://www.yamllint.com/](https://www.yamllint.com/)
 
 
