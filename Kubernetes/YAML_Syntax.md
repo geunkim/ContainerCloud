@@ -48,8 +48,8 @@ object {
 
 ```yaml
 key:
-  - item1
-  - item2
+- item1
+- item2
 
 # 또는
 
